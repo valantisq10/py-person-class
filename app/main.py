@@ -1,15 +1,18 @@
+from typing import List
+
+
 class Person:
     """ Class attribute to store instances by their name"""
     people = {}
 
-    def __init__(self, name: str, age: int):
+    def __init__(self, name: str, age: int) -> None:
         self.name = name
         self.age = age
         # Add the instance to the class-level dictionary
         Person.people[name] = self
 
 
-def create_person_list(people):
+def create_person_list(people: List) -> List[Person]:
     """
     Converts a list of dictionaries into a list of Person instances,
     linking wife/husband attributes to Person instances.
